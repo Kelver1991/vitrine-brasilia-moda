@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Conceito moderno de site para uma unidade Colcci em Brasilia, com vitrine, colecoes, beneficios e atendimento."
+    />
+    <title>Colcci Brasilia | Conceito de Loja</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Inicio Colcci Brasilia">
+        <span>COLCCI</span>
+        <small>Brasilia</small>
+      </a>
+
+      <nav class="nav" aria-label="Menu principal">
+        <a href="#colecoes">Colecoes</a>
+        <a href="#vitrine">Vitrine</a>
+        <a href="#loja">Loja</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="icon-link" href="#contato" aria-label="Falar no WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero__content">
+          <p class="eyebrow">Nova experiencia de moda em Brasilia</p>
+          <h1>Colcci Brasilia</h1>
+          <p>
+            Uma vitrine digital para lancamentos, curadoria local, provador
+            agendado e atendimento rapido para quem vive a cidade com estilo.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--dark" href="#vitrine">Ver vitrine</a>
+            <a class="button button--light" href="#loja">Encontrar loja</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Beneficios">
+        <article>
+          <strong>Retire na loja</strong>
+          <span>Separe suas pecas e experimente presencialmente.</span>
+        </article>
+        <article>
+          <strong>Curadoria local</strong>
+          <span>Looks pensados para eventos, trabalho e fim de semana.</span>
+        </article>
+        <article>
+          <strong>Atendimento direto</strong>
+          <span>Converse com a equipe pelo WhatsApp.</span>
+        </article>
+      </section>
+
+      <section class="section" id="colecoes">
+        <div class="section__header">
+          <p class="eyebrow">Colecoes</p>
+          <h2>Moda urbana com leitura brasiliense</h2>
+          <p>
+            Em vez de ser apenas um catalogo, o site organiza pecas por
+            ocasiões reais: trabalho, jantar, viagem, balada e presente.
+          </p>
+        </div>
+
+        <div class="collections">
+          <article class="collection collection--large">
+            <img
+              src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80"
+              alt="Modelo usando look urbano em ensaio de moda"
+            />
+            <div>
+              <span>Feminino</span>
+              <h3>Alfaiataria leve, jeans e vestidos de impacto</h3>
+            </div>
+          </article>
+          <article class="collection">
+            <img
+              src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=900&q=80"
+              alt="Modelo masculino com look casual moderno"
+            />
+            <div>
+              <span>Masculino</span>
+              <h3>Camisas, polos, denim e pecas versateis</h3>
+            </div>
+          </article>
+          <article class="collection">
+            <img
+              src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80"
+              alt="Detalhe de acessorios e composicao de moda"
+            />
+            <div>
+              <span>Acessorios</span>
+              <h3>Bolsas, oculos, calcados e presentes</h3>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--muted" id="vitrine">
+        <div class="section__header section__header--row">
+          <div>
+            <p class="eyebrow">Vitrine</p>
+            <h2>Produtos em destaque</h2>
+          </div>
+          <div class="filters" aria-label="Filtrar produtos">
+            <button class="filter is-active" type="button" data-filter="todos">Todos</button>
+            <button class="filter" type="button" data-filter="feminino">Feminino</button>
+            <button class="filter" type="button" data-filter="masculino">Masculino</button>
+            <button class="filter" type="button" data-filter="acessorios">Acessorios</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="lookbook">
+        <div>
+          <p class="eyebrow">Lookbook</p>
+          <h2>Monte uma experiencia mais completa que o ecommerce comum</h2>
+          <p>
+            Adicione guias de tamanho, combinacoes prontas, prova agendada,
+            mapa da loja, destaques da semana e lista de desejos por WhatsApp.
+          </p>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1100&q=80"
+          alt="Ensaio de moda em ambiente urbano"
+        />
+      </section>
+
+      <section class="section store" id="loja">
+        <div>
+          <p class="eyebrow">Loja fisica</p>
+          <h2>Colcci em Brasilia</h2>
+          <p>
+            Use esta area para inserir endereco real, horario de funcionamento,
+            link do Google Maps, fotos da vitrine e campanhas locais.
+          </p>
+        </div>
+        <div class="store__panel">
+          <strong>Atendimento</strong>
+          <span>Segunda a sabado, 10h as 22h</span>
+          <span>Domingo, 13h as 19h</span>
+          <a class="button button--dark" href="https://wa.me/5500000000000">Chamar no WhatsApp</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contato">
+      <div>
+        <strong>COLCCI Brasilia</strong>
+        <p>
+          Projeto conceitual para estudo. Use nome, imagens, produtos e marca
+          somente com autorizacao da empresa ou franquia responsavel.
+        </p>
+      </div>
+      <form class="newsletter">
+        <label for="email">Receba novidades</label>
+        <div>
+          <input id="email" type="email" placeholder="seuemail@exemplo.com" />
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
