@@ -59,6 +59,12 @@ const products = [
 
 const grid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
+const interestList = document.querySelector("#interestList");
+const interestCount = document.querySelector("#interestCount");
+const clearInterest = document.querySelector("#clearInterest");
+const contactForm = document.querySelector("#contactForm");
+const formFeedback = document.querySelector("#formFeedback");
+const selectedProducts = [];
 
 function renderProducts(category = "todos") {
   const visibleProducts =
@@ -75,10 +81,29 @@ function renderProducts(category = "todos") {
             <span>${product.category}</span>
             <h3>${product.name}</h3>
             <strong class="price">${product.price}</strong>
+            <button class="add-interest" type="button" data-product="${product.name}">
+              Adicionar a lista
+            </button>
           </div>
         </article>
       `,
     )
+    .join("");
+}
+
+function updateInterestList() {
+  interestCount.textContent =
+    selectedProducts.length === 1
+      ? "1 item"
+      : `${selectedProducts.length} itens`;
+
+  if (!selectedProducts.length) {
+    interestList.innerHTML = "<li>Nenhum produto selecionado.</li>";
+    return;
+  }
+
+  interestList.innerHTML = selectedProducts
+    .map((product) => `<li>${product}</li>`)
     .join("");
 }
 
@@ -90,12 +115,38 @@ filters.forEach((button) => {
   });
 });
 
-document.querySelector(".newsletter").addEventListener("submit", (event) => {
+grid.addEventListener("click", (event) => {
+  const button = event.target.closest(".add-interest");
+  if (!button) return;
+
+  const productName = button.dataset.product;
+  if (!selectedProducts.includes(productName)) {
+    selectedProducts.push(productName);
+  }
+
+  button.textContent = "Adicionado";
+  button.disabled = true;
+  updateInterestList();
+});
+
+clearInterest.addEventListener("click", () => {
+  selectedProducts.length = 0;
+  document.querySelectorAll(".add-interest").forEach((button) => {
+    button.textContent = "Adicionar a lista";
+    button.disabled = false;
+  });
+  updateInterestList();
+});
+
+contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const input = event.currentTarget.querySelector("input");
-  if (!input.value) return;
-  alert("Cadastro recebido! Em um projeto real, isso iria para um banco de dados.");
-  input.value = "";
+  const name = new FormData(contactForm).get("name");
+  const productsText = selectedProducts.length
+    ? ` Produtos selecionados: ${selectedProducts.join(", ")}.`
+    : "";
+
+  formFeedback.textContent = `Solicitacao registrada, ${name}.${productsText} Em um projeto real, esses dados seriam enviados para uma API.`;
+  contactForm.reset();
 });
 
 renderProducts();

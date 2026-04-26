@@ -157,7 +157,9 @@ p {
 
 .button,
 .filter,
-.newsletter button {
+.contact-form button,
+.add-interest,
+.clear-list {
   min-height: 44px;
   border: 1px solid transparent;
   padding: 12px 18px;
@@ -166,7 +168,8 @@ p {
 }
 
 .button--dark,
-.newsletter button {
+.contact-form button,
+.add-interest {
   color: white;
   background: var(--ink);
 }
@@ -309,8 +312,19 @@ p {
 }
 
 .price {
+  display: block;
+  margin-bottom: 14px;
   color: var(--accent);
   font-weight: 900;
+}
+
+.add-interest {
+  width: 100%;
+}
+
+.add-interest:disabled {
+  cursor: default;
+  opacity: 0.68;
 }
 
 .lookbook {
@@ -370,23 +384,75 @@ p {
   color: rgba(255, 255, 255, 0.68);
 }
 
-.newsletter {
+.contact-form {
   justify-self: end;
+  display: grid;
+  gap: 10px;
+  width: min(420px, 100%);
 }
 
-.newsletter label {
+.contact-form label {
   display: block;
-  margin-bottom: 10px;
   font-weight: 800;
 }
 
-.newsletter input {
+.contact-form input,
+.contact-form textarea {
   min-height: 44px;
-  width: min(300px, 70vw);
+  width: 100%;
   border: 1px solid #444;
-  padding: 0 14px;
+  padding: 12px 14px;
   color: white;
+  font: inherit;
   background: #1f1f1f;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.form-feedback {
+  min-height: 24px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.9rem;
+}
+
+.interest-box {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+  margin-top: 24px;
+  padding: 18px;
+  color: var(--ink);
+  background: white;
+}
+
+.interest-box div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.interest-box span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.interest-box ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.clear-list {
+  justify-self: start;
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
 }
 
 @media (max-width: 880px) {
@@ -428,7 +494,7 @@ p {
     flex-direction: column;
   }
 
-  .newsletter {
+  .contact-form {
     justify-self: start;
   }
 }

@@ -4,7 +4,7 @@ Site publicado: <https://kelver1991.github.io/vitrine-brasilia-moda/>
 
 ## Sobre o projeto
 
-Este projeto e uma vitrine digital conceitual para uma loja de moda premium em Brasilia. A proposta e simular uma experiencia moderna de ecommerce/local commerce, com destaque para colecoes, produtos, beneficios, atendimento por WhatsApp e informacoes da loja fisica.
+Este projeto e uma vitrine digital conceitual para uma loja de moda premium em Brasilia. A proposta e simular uma experiencia moderna de ecommerce/local commerce, com destaque para colecoes, produtos, beneficios, lista de interesse, atendimento simulado e informacoes da loja fisica.
 
 O objetivo e demonstrar habilidades de front-end, organizacao de projeto, uso de Git/GitHub e publicacao com GitHub Pages.
 
@@ -35,7 +35,7 @@ Este e um projeto conceitual para estudo e portfolio, sem vinculo oficial com ma
 5. Use JavaScript para pequenas interacoes: filtro de produtos, formulario e futuros botoes de carrinho.
 6. Teste no celular e no computador.
 7. Troque imagens temporarias por imagens autorizadas.
-8. Troque o link do WhatsApp em `index.html` pelo numero correto.
+8. Ajuste textos, dados da loja e regras de atendimento conforme a proposta.
 9. Publique no GitHub.
 10. Depois, publique no GitHub Pages, Vercel ou Netlify.
 
@@ -45,8 +45,9 @@ Este e um projeto conceitual para estudo e portfolio, sem vinculo oficial com ma
 - Secao principal com chamada visual.
 - Areas de colecoes e beneficios.
 - Vitrine de produtos com filtro por categoria.
-- Simulacao de formulario de newsletter.
-- Area para dados de loja fisica e atendimento por WhatsApp.
+- Lista de interesse criada com JavaScript.
+- Formulario de solicitacao de atendimento com envio simulado.
+- Area para dados de loja fisica.
 
 ## Como enviar para o GitHub
 
@@ -72,7 +73,6 @@ git push -u origin main
 
 - Pagina individual de produto.
 - Carrinho de compras.
-- Integracao com WhatsApp para enviar lista de interesse.
 - Painel administrativo para cadastrar produtos.
 - Busca por nome, tamanho, preco e categoria.
 - SEO local para moda premium em Brasilia.

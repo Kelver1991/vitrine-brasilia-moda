@@ -25,8 +25,8 @@
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="icon-link" href="#contato" aria-label="Falar no WhatsApp">
-        <span>WhatsApp</span>
+      <a class="icon-link" href="#contato" aria-label="Solicitar atendimento">
+        <span>Atendimento</span>
       </a>
     </header>
 
@@ -57,7 +57,7 @@
         </article>
         <article>
           <strong>Atendimento direto</strong>
-          <span>Converse com a equipe pelo WhatsApp.</span>
+          <span>Envie uma solicitacao pelo formulario do site.</span>
         </article>
       </section>
 
@@ -128,7 +128,7 @@
           <h2>Monte uma experiencia mais completa que o ecommerce comum</h2>
           <p>
             Adicione guias de tamanho, combinacoes prontas, prova agendada,
-            mapa da loja, destaques da semana e lista de desejos por WhatsApp.
+            mapa da loja, destaques da semana e lista de interesse.
           </p>
         </div>
         <img
@@ -150,7 +150,7 @@
           <strong>Atendimento</strong>
           <span>Segunda a sabado, 10h as 22h</span>
           <span>Domingo, 13h as 19h</span>
-          <a class="button button--dark" href="https://wa.me/5500000000000">Chamar no WhatsApp</a>
+          <a class="button button--dark" href="#contato">Solicitar atendimento</a>
         </div>
       </section>
     </main>
@@ -163,13 +163,30 @@
           marcas reais. Imagens usadas como referencia visual autorizada por
           bancos de imagem.
         </p>
-      </div>
-      <form class="newsletter">
-        <label for="email">Receba novidades</label>
-        <div>
-          <input id="email" type="email" placeholder="seuemail@exemplo.com" />
-          <button type="submit">Enviar</button>
+        <div class="interest-box">
+          <div>
+            <span>Lista de interesse</span>
+            <strong id="interestCount">0 itens</strong>
+          </div>
+          <ul id="interestList">
+            <li>Nenhum produto selecionado.</li>
+          </ul>
+          <button class="clear-list" type="button" id="clearInterest">Limpar lista</button>
         </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label for="name">Solicitar atendimento</label>
+        <input id="name" name="name" type="text" placeholder="Seu nome" required />
+        <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required />
+        <input id="phone" name="phone" type="tel" placeholder="Telefone opcional" />
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Conte quais pecas ou estilos voce procura"
+        ></textarea>
+        <button type="submit">Enviar solicitacao</button>
+        <p class="form-feedback" id="formFeedback" role="status"></p>
       </form>
     </footer>
 
