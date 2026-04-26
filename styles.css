@@ -320,6 +320,16 @@ p {
 
 .add-interest {
   width: 100%;
+  background: var(--accent);
+  border-color: var(--accent);
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.add-interest:hover {
+  background: #7d1422;
+  transform: translateY(-1px);
 }
 
 .add-interest:disabled {

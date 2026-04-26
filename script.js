@@ -35,7 +35,7 @@ const products = [
       "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80",
   },
   {
-    name: "Oculos fashion metal",
+    name: "Óculos fashion metal",
     category: "acessorios",
     price: "R$ 289,00",
     image:
@@ -82,7 +82,7 @@ function renderProducts(category = "todos") {
             <h3>${product.name}</h3>
             <strong class="price">${product.price}</strong>
             <button class="add-interest" type="button" data-product="${product.name}">
-              Adicionar a lista
+              Adicionar à lista
             </button>
           </div>
         </article>
@@ -132,7 +132,7 @@ grid.addEventListener("click", (event) => {
 clearInterest.addEventListener("click", () => {
   selectedProducts.length = 0;
   document.querySelectorAll(".add-interest").forEach((button) => {
-    button.textContent = "Adicionar a lista";
+    button.textContent = "Adicionar à lista";
     button.disabled = false;
   });
   updateInterestList();
@@ -145,7 +145,7 @@ contactForm.addEventListener("submit", (event) => {
     ? ` Produtos selecionados: ${selectedProducts.join(", ")}.`
     : "";
 
-  formFeedback.textContent = `Solicitacao registrada, ${name}.${productsText} Em um projeto real, esses dados seriam enviados para uma API.`;
+  formFeedback.textContent = `Solicitação registrada, ${name}.${productsText} Em um projeto real, esses dados seriam enviados para uma API.`;
   contactForm.reset();
 });
 
