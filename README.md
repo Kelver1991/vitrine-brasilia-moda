@@ -1,6 +1,6 @@
 # Vitrine Brasilia - conceito de site de moda
 
-Site publicado: <https://kelver1991.github.io/colcci-brasilia-conceito/>
+Site publicado: <https://kelver1991.github.io/vitrine-brasilia-moda/>
 
 ## Sobre o projeto
 
