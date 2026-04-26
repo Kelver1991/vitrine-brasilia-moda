@@ -1,8 +1,24 @@
-# Colcci Brasilia - conceito de site
+# Vitrine Brasilia - conceito de site de moda
 
-Projeto inicial em HTML, CSS e JavaScript puro para estudar uma vitrine moderna inspirada no tipo de experiencia do ecommerce oficial da Colcci.
+Site publicado: <https://kelver1991.github.io/colcci-brasilia-conceito/>
 
-> Atencao: use nome, imagens, produtos, campanhas e identidade da Colcci somente se voce tiver autorizacao da marca, franquia ou responsavel comercial. Para portfolio, trate como projeto conceitual.
+## Sobre o projeto
+
+Este projeto e uma vitrine digital conceitual para uma loja de moda premium em Brasilia. A proposta e simular uma experiencia moderna de ecommerce/local commerce, com destaque para colecoes, produtos, beneficios, atendimento por WhatsApp e informacoes da loja fisica.
+
+O objetivo e demonstrar habilidades de front-end, organizacao de projeto, uso de Git/GitHub e publicacao com GitHub Pages.
+
+## Tecnologias usadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Git e GitHub
+- GitHub Pages
+
+## Observacao
+
+Este e um projeto conceitual para estudo e portfolio, sem vinculo oficial com marcas reais. Nomes, produtos, textos e imagens devem ser substituidos por materiais autorizados em um projeto comercial.
 
 ## Como abrir o site
 
@@ -23,6 +39,15 @@ Projeto inicial em HTML, CSS e JavaScript puro para estudar uma vitrine moderna 
 9. Publique no GitHub.
 10. Depois, publique no GitHub Pages, Vercel ou Netlify.
 
+## Funcionalidades
+
+- Layout responsivo para desktop e celular.
+- Secao principal com chamada visual.
+- Areas de colecoes e beneficios.
+- Vitrine de produtos com filtro por categoria.
+- Simulacao de formulario de newsletter.
+- Area para dados de loja fisica e atendimento por WhatsApp.
+
 ## Como enviar para o GitHub
 
 No terminal, dentro desta pasta:
@@ -30,7 +55,7 @@ No terminal, dentro desta pasta:
 ```bash
 git status
 git add .
-git commit -m "Cria site conceito Colcci Brasilia"
+git commit -m "Cria site conceito de moda Brasilia"
 git branch -M main
 git remote add origin https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO.git
 git push -u origin main
@@ -50,6 +75,6 @@ git push -u origin main
 - Integracao com WhatsApp para enviar lista de interesse.
 - Painel administrativo para cadastrar produtos.
 - Busca por nome, tamanho, preco e categoria.
-- SEO local para "Colcci Brasilia".
+- SEO local para moda premium em Brasilia.
 - Mapa com endereco da loja.
 - Deploy em Vercel ou GitHub Pages.
