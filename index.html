@@ -163,15 +163,21 @@
           marcas reais. Imagens usadas como referência visual autorizada por
           bancos de imagem.
         </p>
-        <div class="interest-box">
-          <div>
-            <span>Lista de interesse</span>
-            <strong id="interestCount">0 itens</strong>
+        <div class="interest-box" aria-live="polite">
+          <div class="interest-box__header">
+            <div>
+              <span>Lista de interesse</span>
+              <strong id="interestCount">0 itens</strong>
+            </div>
+            <strong class="interest-total" id="interestTotal">R$ 0,00</strong>
           </div>
-          <ul id="interestList">
-            <li>Nenhum produto selecionado.</li>
-          </ul>
-          <button class="clear-list" type="button" id="clearInterest">Limpar lista</button>
+          <div class="interest-list" id="interestList">
+            <p>Nenhum produto selecionado.</p>
+          </div>
+          <div class="interest-actions">
+            <button class="clear-list" type="button" id="clearInterest">Limpar lista</button>
+            <a class="review-link" href="#vitrine">Adicionar produtos</a>
+          </div>
         </div>
       </div>
       <form class="contact-form" id="contactForm">

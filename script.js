@@ -61,10 +61,22 @@ const grid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
 const interestList = document.querySelector("#interestList");
 const interestCount = document.querySelector("#interestCount");
+const interestTotal = document.querySelector("#interestTotal");
 const clearInterest = document.querySelector("#clearInterest");
 const contactForm = document.querySelector("#contactForm");
 const formFeedback = document.querySelector("#formFeedback");
 const selectedProducts = [];
+
+function parsePrice(price) {
+  return Number(price.replace("R$", "").replace(".", "").replace(",", ".").trim());
+}
+
+function formatCurrency(value) {
+  return value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+}
 
 function renderProducts(category = "todos") {
   const visibleProducts =
@@ -92,18 +104,39 @@ function renderProducts(category = "todos") {
 }
 
 function updateInterestList() {
+  const total = selectedProducts.reduce(
+    (sum, product) => sum + parsePrice(product.price),
+    0,
+  );
+
   interestCount.textContent =
     selectedProducts.length === 1
       ? "1 item"
       : `${selectedProducts.length} itens`;
+  interestTotal.textContent = formatCurrency(total);
 
   if (!selectedProducts.length) {
-    interestList.innerHTML = "<li>Nenhum produto selecionado.</li>";
+    interestList.innerHTML = "<p>Nenhum produto selecionado.</p>";
     return;
   }
 
   interestList.innerHTML = selectedProducts
-    .map((product) => `<li>${product}</li>`)
+    .map(
+      (product) => `
+        <article class="interest-item">
+          <div>
+            <span>${product.category}</span>
+            <strong>${product.name}</strong>
+          </div>
+          <div class="interest-item__meta">
+            <strong>${product.price}</strong>
+            <button type="button" data-remove="${product.name}" aria-label="Remover ${product.name}">
+              Remover
+            </button>
+          </div>
+        </article>
+      `,
+    )
     .join("");
 }
 
@@ -120,12 +153,33 @@ grid.addEventListener("click", (event) => {
   if (!button) return;
 
   const productName = button.dataset.product;
-  if (!selectedProducts.includes(productName)) {
-    selectedProducts.push(productName);
+  const product = products.find((item) => item.name === productName);
+  if (product && !selectedProducts.some((item) => item.name === productName)) {
+    selectedProducts.push(product);
   }
 
   button.textContent = "Adicionado";
   button.disabled = true;
+  updateInterestList();
+});
+
+interestList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-remove]");
+  if (!button) return;
+
+  const productName = button.dataset.remove;
+  const index = selectedProducts.findIndex((product) => product.name === productName);
+  if (index >= 0) {
+    selectedProducts.splice(index, 1);
+  }
+
+  document.querySelectorAll(".add-interest").forEach((addButton) => {
+    if (addButton.dataset.product === productName) {
+      addButton.textContent = "Adicionar à lista";
+      addButton.disabled = false;
+    }
+  });
+
   updateInterestList();
 });
 
@@ -142,7 +196,9 @@ contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = new FormData(contactForm).get("name");
   const productsText = selectedProducts.length
-    ? ` Produtos selecionados: ${selectedProducts.join(", ")}.`
+    ? ` Produtos selecionados: ${selectedProducts
+        .map((product) => product.name)
+        .join(", ")}. Total estimado: ${interestTotal.textContent}.`
     : "";
 
   formFeedback.textContent = `Solicitação registrada, ${name}.${productsText} Em um projeto real, esses dados seriam enviados para uma API.`;

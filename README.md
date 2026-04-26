@@ -45,7 +45,7 @@ Este é um projeto conceitual para estudo e portfólio, sem vínculo oficial com
 - Seção principal com chamada visual.
 - Áreas de coleções e benefícios.
 - Vitrine de produtos com filtro por categoria.
-- Lista de interesse criada com JavaScript.
+- Lista de interesse criada com JavaScript, com itens, preços e total estimado.
 - Formulário de solicitação de atendimento com envio simulado.
 - Área para dados de loja física.
 
