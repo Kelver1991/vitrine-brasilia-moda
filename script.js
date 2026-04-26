@@ -61,6 +61,7 @@ const grid = document.querySelector("#productGrid");
 const filters = document.querySelectorAll(".filter");
 const interestList = document.querySelector("#interestList");
 const interestCount = document.querySelector("#interestCount");
+const headerInterestCount = document.querySelector("#headerInterestCount");
 const interestTotal = document.querySelector("#interestTotal");
 const clearInterest = document.querySelector("#clearInterest");
 const contactForm = document.querySelector("#contactForm");
@@ -113,6 +114,7 @@ function updateInterestList() {
     selectedProducts.length === 1
       ? "1 item"
       : `${selectedProducts.length} itens`;
+  headerInterestCount.textContent = selectedProducts.length;
   interestTotal.textContent = formatCurrency(total);
 
   if (!selectedProducts.length) {
@@ -123,12 +125,14 @@ function updateInterestList() {
   interestList.innerHTML = selectedProducts
     .map(
       (product) => `
-        <article class="interest-item">
+        <article class="cart-item">
+          <img src="${product.image}" alt="${product.name}">
           <div>
             <span>${product.category}</span>
             <strong>${product.name}</strong>
+            <small>Quantidade: 1</small>
           </div>
-          <div class="interest-item__meta">
+          <div class="cart-item__meta">
             <strong>${product.price}</strong>
             <button type="button" data-remove="${product.name}" aria-label="Remover ${product.name}">
               Remover

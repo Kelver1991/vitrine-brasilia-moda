@@ -25,8 +25,9 @@
         <a href="#contato">Contato</a>
       </nav>
 
-      <a class="icon-link" href="#contato" aria-label="Solicitar atendimento">
-        <span>Atendimento</span>
+      <a class="cart-link" href="#carrinho" aria-label="Ver lista de interesse">
+        <span>Lista</span>
+        <strong id="headerInterestCount">0</strong>
       </a>
     </header>
 
@@ -119,7 +120,33 @@
           </div>
         </div>
 
-        <div class="product-grid" id="productGrid"></div>
+        <div class="shop-layout">
+          <div class="product-grid" id="productGrid"></div>
+
+          <aside class="cart-panel" id="carrinho" aria-live="polite">
+            <div class="cart-panel__header">
+              <div>
+                <p class="eyebrow">Carrinho</p>
+                <h3>Lista de interesse</h3>
+              </div>
+              <strong id="interestCount">0 itens</strong>
+            </div>
+
+            <div class="cart-list" id="interestList">
+              <p>Nenhum produto selecionado.</p>
+            </div>
+
+            <div class="cart-total">
+              <span>Total estimado</span>
+              <strong id="interestTotal">R$ 0,00</strong>
+            </div>
+
+            <div class="cart-actions">
+              <a class="button button--dark" href="#contato">Solicitar atendimento</a>
+              <button class="clear-list" type="button" id="clearInterest">Limpar</button>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="lookbook">
@@ -163,22 +190,6 @@
           marcas reais. Imagens usadas como referência visual autorizada por
           bancos de imagem.
         </p>
-        <div class="interest-box" aria-live="polite">
-          <div class="interest-box__header">
-            <div>
-              <span>Lista de interesse</span>
-              <strong id="interestCount">0 itens</strong>
-            </div>
-            <strong class="interest-total" id="interestTotal">R$ 0,00</strong>
-          </div>
-          <div class="interest-list" id="interestList">
-            <p>Nenhum produto selecionado.</p>
-          </div>
-          <div class="interest-actions">
-            <button class="clear-list" type="button" id="clearInterest">Limpar lista</button>
-            <a class="review-link" href="#vitrine">Adicionar produtos</a>
-          </div>
-        </div>
       </div>
       <form class="contact-form" id="contactForm">
         <label for="name">Solicitar atendimento</label>
@@ -196,6 +207,6 @@
       </form>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>
